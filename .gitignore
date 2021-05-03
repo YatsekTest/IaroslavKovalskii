@@ -1,5 +1,5 @@
 # Compiled class file
-*.class
+#*.class
 
 # Log file
 *.log
@@ -27,3 +27,17 @@ target
 .idea
 etc.
 out/
+
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+.idea/*.iml
+# .idea/modules
+# *.iml
+*.ipr
+
+# Default ignored files
+/shelf/
+/workspace.xml
+.idea/
