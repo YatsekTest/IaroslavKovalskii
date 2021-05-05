@@ -8,6 +8,14 @@
     <artifactId>IaroslavKovalskii</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <checkstyle.version>8.41.1</checkstyle.version>
+        <java.version>1.8</java.version>
+        <allTests>${project.basedir}/src/test/resources/allTests.xml</allTests>
+        <addSubtractTests>${project.basedir}/src/test/resources/addSubtractTests.xml</addSubtractTests>
+        <multiplyDivideTests>${project.basedir}/src/test/resources/multiplyDivideTests.xml</multiplyDivideTests>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.epam.tat.module4</groupId>
@@ -30,15 +38,38 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <allTests>${project.basedir}/src/test/resources/allTests.xml</allTests>
-        <addSubtractTests>${project.basedir}/src/test/resources/addSubtractTests.xml</addSubtractTests>
-        <multiplyDivideTests>${project.basedir}/src/test/resources/multiplyDivideTests.xml</multiplyDivideTests>
-    </properties>
-
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configLocation>
+                        <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
+                        https://raw.githubusercontent.com/DmitryKhodakovsky/epam-test-auto-spring-2021/master/codestyle_checks.xml
+                    </configLocation>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <violationSeverity>warning</violationSeverity>
+                    <consoleOutput>true</consoleOutput>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
