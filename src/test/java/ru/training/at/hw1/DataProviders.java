@@ -24,6 +24,9 @@ public class DataProviders {
         return new Object[][]{{25.0, 5.0, 5.0}, {4.0, 2.0, 2.0}, {100.0, 3.0, 33.33}};
     }
 
-
+    @DataProvider
+    public static Object[][] sqrtData() {
+        return new Object[][]{{25.0, 5.0}, {4.0, 2.0}, {100.0, 10.0}};
+    }
 
 }
