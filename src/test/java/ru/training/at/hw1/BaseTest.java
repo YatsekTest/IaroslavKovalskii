@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 @Test
 public class BaseTest {
 
-    Calculator calculator;
+    protected Calculator calculator;
 
     @BeforeClass
     public void createCalculator() {
