@@ -10,6 +10,7 @@
 
     <properties>
         <allTests>${project.basedir}/src/test/resources/allTests.xml</allTests>
+        <hw2Tests>${project.basedir}/src/test/resources/hw2Tests.xml</hw2Tests>
         <addSubtractTests>${project.basedir}/src/test/resources/addSubtractTests.xml</addSubtractTests>
         <multiplyDivideTests>${project.basedir}/src/test/resources/multiplyDivideTests.xml</multiplyDivideTests>
         <java.version>1.8</java.version>
@@ -129,6 +130,11 @@
             <id>AllTests</id>
             <properties>
                 <testng.suite.file>${allTests}</testng.suite.file>
+            </properties>
+        </profile><profile>
+            <id>HomeWork2Tests</id>
+            <properties>
+                <testng.suite.file>${hw2Tests}</testng.suite.file>
             </properties>
         </profile>
     </profiles>

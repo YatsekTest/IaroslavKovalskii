@@ -36,16 +36,19 @@ public class ExerciseTwoTest extends BaseTest {
     // Open through the header menu Service -> Different Elements Page
     @Test(priority = 5)
     public void openDifferentElementPageTest() {
-        WebElement serviceElement = driver.findElement(By.xpath("//a[contains(text(), 'Service')]"));
+        WebElement serviceElement =
+                driver.findElement(By.xpath("//a[contains(text(), 'Service')]"));
         serviceElement.click();
-        WebElement differentElementsPageElement = driver.findElement(By.xpath("//a[contains(text(), 'Different elements')]"));
+        WebElement differentElementsPageElement =
+                driver.findElement(By.xpath("//a[contains(text(), 'Different elements')]"));
         differentElementsPageElement.click();
     }
 
     // Select checkboxes Water, Wind
     @Test(priority = 6)
     public void checkboxesTest() {
-        List<WebElement> checkboxElements = driver.findElements(By.cssSelector("input[type*=\"checkbox\"]"));
+        List<WebElement> checkboxElements =
+                driver.findElements(By.cssSelector("input[type*=\"checkbox\"]"));
         WebElement windCheckbox = checkboxElements.get(0);
         windCheckbox.click();
         assertTrue(windCheckbox.isSelected());
@@ -57,7 +60,8 @@ public class ExerciseTwoTest extends BaseTest {
     // Select radio Selen
     @Test(priority = 7)
     public void radioTest() {
-        WebElement selenRadio = driver.findElement(By.cssSelector("label.label-radio:nth-child(4)>input"));
+        WebElement selenRadio =
+                driver.findElement(By.cssSelector("label.label-radio:nth-child(4)>input"));
         selenRadio.click();
         assertTrue(selenRadio.isSelected());
     }
@@ -65,18 +69,21 @@ public class ExerciseTwoTest extends BaseTest {
     // Select in dropdown Yellow
     @Test(priority = 8)
     public void dropdownTest() {
-        WebElement yellowDropdown = driver.findElement(By.xpath("//option[contains(text(), 'Yellow')]"));
+        WebElement yellowDropdown =
+                driver.findElement(By.xpath("//option[contains(text(), 'Yellow')]"));
         yellowDropdown.click();
         assertTrue(yellowDropdown.isSelected());
     }
 
     /* Assert that
-    •  for each checkbox there is an individual log row and value is corresponded to the status of checkbox
+    •  for each checkbox there is an individual log row and value is corresponded to the
+       status of checkbox
     •  for radio button there is a log row and value is corresponded to the status of radio button
     •  for dropdown there is a log row and value is corresponded to the selected value. */
     @Test(priority = 9)
     public void logRowsTest() {
-        List<WebElement> logRows = driver.findElements(By.cssSelector("ul.panel-body-list.logs>li"));
+        List<WebElement> logRows =
+                driver.findElements(By.cssSelector("ul.panel-body-list.logs>li"));
         assertTrue(logRows.get(0).getText().contains("Colors: value changed to Yellow"));
         assertTrue(logRows.get(1).getText().contains("metal: value changed to Selen"));
         assertTrue(logRows.get(2).getText().contains("Wind: condition changed to true"));
