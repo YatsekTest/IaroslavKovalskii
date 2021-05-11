@@ -113,9 +113,6 @@
     <profiles>
         <profile>
             <id>AddSubtractTests</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <testng.suite.file>${addSubtractTests}</testng.suite.file>
             </properties>
@@ -133,6 +130,9 @@
             </properties>
         </profile><profile>
             <id>HomeWork2Tests</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
             <properties>
                 <testng.suite.file>${hw2Tests}</testng.suite.file>
             </properties>

@@ -48,7 +48,7 @@ public class ExerciseTwoTest extends BaseTest {
     @Test(priority = 6)
     public void checkboxesTest() {
         List<WebElement> checkboxElements =
-                driver.findElements(By.cssSelector("input[type*=\"checkbox\"]"));
+                driver.findElements(By.cssSelector("input[type='checkbox']"));
         WebElement windCheckbox = checkboxElements.get(0);
         windCheckbox.click();
         assertTrue(windCheckbox.isSelected());
@@ -61,7 +61,7 @@ public class ExerciseTwoTest extends BaseTest {
     @Test(priority = 7)
     public void radioTest() {
         WebElement selenRadio =
-                driver.findElement(By.cssSelector("label.label-radio:nth-child(4)>input"));
+                driver.findElement(By.cssSelector("label:nth-child(4) > input[type=radio]"));
         selenRadio.click();
         assertTrue(selenRadio.isSelected());
     }
