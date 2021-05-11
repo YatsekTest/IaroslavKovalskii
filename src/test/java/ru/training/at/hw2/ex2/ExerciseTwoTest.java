@@ -60,8 +60,9 @@ public class ExerciseTwoTest extends BaseTest {
     // Select radio Selen
     @Test(priority = 7)
     public void radioTest() {
-        WebElement selenRadio =
-                driver.findElement(By.cssSelector("label:nth-child(4) > input[type=radio]"));
+        List<WebElement> radioElements =
+                driver.findElements(By.cssSelector("input[type='radio']"));
+        WebElement selenRadio = radioElements.get(3);
         selenRadio.click();
         assertTrue(selenRadio.isSelected());
     }
