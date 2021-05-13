@@ -2,6 +2,7 @@ package ru.training.at.hw2.ex2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.training.at.hw2.BaseTest;
 
@@ -48,7 +49,7 @@ public class ExerciseTwoTest extends BaseTest {
     @Test(priority = 6)
     public void checkboxesTest() {
         List<WebElement> checkboxElements =
-                driver.findElements(By.cssSelector("input[type='checkbox']"));
+                driver.findElements(By.cssSelector("input[type=checkbox]"));
         WebElement windCheckbox = checkboxElements.get(0);
         windCheckbox.click();
         assertTrue(windCheckbox.isSelected());
@@ -64,7 +65,7 @@ public class ExerciseTwoTest extends BaseTest {
                 driver.findElement(By.xpath("//label[@class='label-radio' "
                         + "and contains(.,'Selen')]"));
         selenRadio.click();
-        assertTrue(selenRadio.isSelected());
+        Assert.assertTrue(selenRadio.isSelected());
     }
 
     // Select in dropdown Yellow
