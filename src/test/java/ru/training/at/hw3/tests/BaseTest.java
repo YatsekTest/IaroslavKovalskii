@@ -12,15 +12,14 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     protected WebDriver driver;
-//    BasePage basePage;
-    MainJdiPage mainJdiPage;
+
+    protected MainJdiPage mainJdiPage;
 
     @BeforeClass
     public void setUp() {
         driver = DriverManager.setUpDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//        basePage = new BasePage(driver);
         mainJdiPage = new MainJdiPage(driver);
     }
 

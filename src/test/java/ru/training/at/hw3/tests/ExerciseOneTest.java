@@ -31,13 +31,13 @@ public class ExerciseOneTest extends BaseTest {
     @Test(priority = 5)
     public void headerItemNamesTest() {
         List<WebElement> headerItems = mainJdiPage.getHeaderItems();
-        softAssert.assertEquals(headerItems.size(), 4);
-        List<String> itemsTitles = new ArrayList<>();
+        softAssert.assertEquals(headerItems.size(), HEADER_ITEMS_COUNT);
+        List<String> headerItemTitles = new ArrayList<>();
         for (WebElement element : headerItems) {
             softAssert.assertTrue(element.isDisplayed());
-            itemsTitles.add(element.getText());
+            headerItemTitles.add(element.getText());
         }
-        softAssert.assertEquals(itemsTitles, HEADER_ITEMS_TITLES);
+        softAssert.assertEquals(headerItemTitles, HEADER_ITEMS_TITLES);
         softAssert.assertAll();
     }
 
@@ -45,7 +45,7 @@ public class ExerciseOneTest extends BaseTest {
     @Test(priority = 6)
     public void indexPageImagesTest() {
         List<WebElement> imagesItems = mainJdiPage.getImageItems();
-        softAssert.assertEquals(imagesItems.size(), 4);
+        softAssert.assertEquals(imagesItems.size(), BENEFIT_ITEMS_COUNT);
         for (WebElement element : imagesItems) {
             softAssert.assertTrue(element.isDisplayed());
         }
@@ -55,7 +55,38 @@ public class ExerciseOneTest extends BaseTest {
     // Assert that there are 4 texts on the Index Page under icons and they have proper text
     @Test(priority = 7)
     public void indexPageTextTest() {
+        List<WebElement> textItems = mainJdiPage.getTextItems();
+        softAssert.assertEquals(textItems.size(), BENEFIT_ITEMS_COUNT);
+        List<String> textItemTitles = new ArrayList<>();
+        for (WebElement element : textItems) {
+            softAssert.assertTrue(element.isDisplayed());
+            textItemTitles.add(element.getText());
+        }
+        softAssert.assertEquals(textItemTitles, TEXT_ITEMS_TITLES);
+        softAssert.assertAll();
+    }
 
+    // Assert that there is the iframe with “Frame Button” exist and “Frame Button” in the iframe
+    @Test(priority = 8)
+    public void frameButtonTest() {
+        softAssert.assertTrue(mainJdiPage.getFrameElement().isDisplayed());
+        softAssert.assertTrue(mainJdiPage.getFrameButton().isDisplayed());
+        softAssert.assertAll();
+        mainJdiPage.switchToDefaultContent();
+    }
+
+    // Assert that there are 5 items in the Left Section are displayed and they have proper text
+    @Test(priority = 11)
+    public void leftSectionTest() {
+        List<WebElement> leftSectionElements = mainJdiPage.getLeftSectionElements();
+        softAssert.assertEquals(leftSectionElements.size(), LEFT_SECTION_ELEMENTS_COUNT);
+        List<String> leftSectionElementTitles = new ArrayList<>();
+        for (WebElement element : leftSectionElements) {
+            softAssert.assertTrue(element.isDisplayed());
+            leftSectionElementTitles.add(element.getText());
+        }
+        softAssert.assertEquals(leftSectionElementTitles, LEFT_SECTION_TITLES);
+        softAssert.assertAll();
     }
 
 
