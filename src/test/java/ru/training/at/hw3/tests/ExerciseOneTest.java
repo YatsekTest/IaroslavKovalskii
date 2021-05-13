@@ -1,8 +1,10 @@
 package ru.training.at.hw3.tests;
 
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import ru.training.at.hw3.pages.MainJdiPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,14 @@ import static ru.training.at.hw3.testdata.TestData.*;
 
 public class ExerciseOneTest extends BaseTest {
 
-    SoftAssert softAssert = new SoftAssert();
+    SoftAssert softAssert;
+    MainJdiPage mainJdiPage;
+
+    @BeforeClass
+    private void setUpTests() {
+        softAssert = new SoftAssert();
+        mainJdiPage = new MainJdiPage(driver);
+    }
 
     // Assert Browser title
     @Test(priority = 2)
@@ -88,6 +97,5 @@ public class ExerciseOneTest extends BaseTest {
         softAssert.assertEquals(leftSectionElementTitles, LEFT_SECTION_TITLES);
         softAssert.assertAll();
     }
-
 
 }
