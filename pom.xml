@@ -12,6 +12,7 @@
         <allTests>${project.basedir}/src/test/resources/allTests.xml</allTests>
         <hw2Tests>${project.basedir}/src/test/resources/hw2Tests.xml</hw2Tests>
         <hw3Tests>${project.basedir}/src/test/resources/hw3Tests.xml</hw3Tests>
+        <hw4Tests>${project.basedir}/src/test/resources/hw4Tests.xml</hw4Tests>
         <addSubtractTests>${project.basedir}/src/test/resources/addSubtractTests.xml</addSubtractTests>
         <multiplyDivideTests>${project.basedir}/src/test/resources/multiplyDivideTests.xml</multiplyDivideTests>
         <java.version>1.8</java.version>
@@ -134,6 +135,11 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -164,11 +170,17 @@
         </profile>
         <profile>
             <id>HomeWork3Tests</id>
+            <properties>
+                <testng.suite.file>${hw3Tests}</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>HomeWork4Tests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <testng.suite.file>${hw3Tests}</testng.suite.file>
+                <testng.suite.file>${hw4Tests}</testng.suite.file>
             </properties>
         </profile>
     </profiles>
