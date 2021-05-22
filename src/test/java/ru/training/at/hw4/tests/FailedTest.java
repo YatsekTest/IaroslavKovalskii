@@ -4,9 +4,11 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ru.training.at.hw4.pages.MainJdiPage;
+import ru.training.at.hw4.services.ScreenshotListener;
 import ru.training.at.hw4.testdata.TestData;
 
 import java.util.ArrayList;
@@ -14,8 +16,9 @@ import java.util.List;
 
 import static ru.training.at.hw4.testdata.TestData.*;
 
-@Story(value = "Main Jdi page.")
-public class ExerciseOneTest extends BaseTest {
+@Story(value = "Fail tests for main Jdi page.")
+@Listeners({ScreenshotListener.class})
+public class FailedTest extends BaseTest {
 
     SoftAssert softAssert;
     MainJdiPage mainJdiPage;
@@ -37,7 +40,7 @@ public class ExerciseOneTest extends BaseTest {
     @Test(priority = 4)
     public void userLoginTest() {
         mainJdiPage.login(USERNAME, PASSWORD);
-        softAssert.assertEquals(mainJdiPage.getLoggedUserName(), LOGGED_USER_NAME);
+        softAssert.assertEquals(mainJdiPage.getLoggedUserName(), WRONG_LOGGED_USER_NAME);
     }
 
     @Description(value = "Assert that there are 4 items on the header "

@@ -14,6 +14,7 @@ public final class TestData {
     public static final String HOME_PAGE_TITLE = "Home Page";
     public static final String SERVICE_DIFFERENT_PAGE_TITLE = "Different Elements";
     public static final String LOGGED_USER_NAME = "ROMAN IOVLEV";
+    public static final String WRONG_LOGGED_USER_NAME = "STEPAN IOVLEV";
     public static final int HEADER_ITEMS_COUNT = 4;
     public static final int BENEFIT_ITEMS_COUNT = 4;
     public static final int LEFT_SECTION_ELEMENTS_COUNT = 5;

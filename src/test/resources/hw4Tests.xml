@@ -4,6 +4,7 @@
         <classes>
             <class name="ru.training.at.hw4.tests.ExerciseOneTest"/>
             <class name="ru.training.at.hw4.tests.ExerciseTwoTest"/>
+            <class name="ru.training.at.hw4.tests.FailedTest"/>
         </classes>
     </test>
 </suite>
