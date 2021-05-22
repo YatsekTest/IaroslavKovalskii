@@ -1,11 +1,14 @@
 package ru.training.at.hw4.pages;
 
+import io.qameta.allure.Step;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@Getter
 public class ServiceDifferentElementsPage extends BasePage {
 
     @FindBy(xpath = "//a[contains(text(), 'Service')]")
@@ -33,41 +36,26 @@ public class ServiceDifferentElementsPage extends BasePage {
         super(driver);
     }
 
+    @Step(value = "Opening Different Element page.")
     public void openDifferentElementPage() {
         serviceElement.click();
         differentElementsPageElement.click();
     }
 
+    @Step(value = "Selecting checkboxes.")
     public void selectCheckboxes() {
         waterCheckbox.click();
         windCheckbox.click();
     }
 
+    @Step(value = "Selecting radiobutton.")
     public void selectRadioBtn() {
         selenRadioBtn.click();
     }
 
+    @Step(value = "Selecting dropdown menu.")
     public void selectDropdown() {
         yellowDropdown.click();
     }
 
-    public WebElement getWindCheckbox() {
-        return windCheckbox;
-    }
-
-    public WebElement getWaterCheckbox() {
-        return waterCheckbox;
-    }
-
-    public WebElement getSelenRadioBtn() {
-        return selenRadioBtn;
-    }
-
-    public WebElement getYellowDropdown() {
-        return yellowDropdown;
-    }
-
-    public List<WebElement> getLogRows() {
-        return logRows;
-    }
 }

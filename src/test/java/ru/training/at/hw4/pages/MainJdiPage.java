@@ -1,5 +1,7 @@
 package ru.training.at.hw4.pages;
 
+import io.qameta.allure.Step;
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@Getter
 public class MainJdiPage extends BasePage {
 
     @FindBy(css = "ul.nav > li")
@@ -28,32 +31,15 @@ public class MainJdiPage extends BasePage {
         super(driver);
     }
 
-    public List<WebElement> getHeaderItems() {
-        return headerItems;
-    }
-
-    public List<WebElement> getImageItems() {
-        return imageItems;
-    }
-
-    public List<WebElement> getTextItems() {
-        return textItems;
-    }
-
-    public WebElement getFrameElement() {
-        return frameElement;
-    }
-
+    @Step(value = "Getting frame button.")
     public WebElement getFrameButton() {
         driver.switchTo().frame(frameElement);
         return driver.findElement(By.id("frame-button"));
     }
 
+    @Step(value = "Switching driver to default content.")
     public void switchToDefaultContent() {
         driver.switchTo().defaultContent();
     }
 
-    public List<WebElement> getLeftSectionElements() {
-        return leftSectionElements;
-    }
 }

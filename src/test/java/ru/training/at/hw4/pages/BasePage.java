@@ -1,5 +1,6 @@
 package ru.training.at.hw4.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,10 +31,12 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void openPage() {
-        driver.get(TestData.URL);
+    @Step(value = "Open page with {url} URL.")
+    public void openPage(String url) {
+        driver.get(url);
     }
 
+    @Step(value = "Loggin in with {username} username and {password} password.")
     public void login(String username, String password) {
         loginForm.click();
         loginField.sendKeys(username);
@@ -41,6 +44,7 @@ public class BasePage {
         loginBtn.click();
     }
 
+    @Step(value = "Get logged user name.")
     public String getLoggedUserName() {
         return userName.getText();
     }

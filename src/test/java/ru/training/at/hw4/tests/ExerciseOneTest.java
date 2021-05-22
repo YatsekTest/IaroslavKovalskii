@@ -1,10 +1,12 @@
 package ru.training.at.hw4.tests;
 
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ru.training.at.hw4.pages.MainJdiPage;
+import ru.training.at.hw4.testdata.TestData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,21 +24,22 @@ public class ExerciseOneTest extends BaseTest {
         mainJdiPage = new MainJdiPage(driver);
     }
 
-    // Assert Browser title
+    @Description(value = "Assert Browser title.")
     @Test(priority = 2)
     public void browserTitleTest() {
-        mainJdiPage.openPage();
+        mainJdiPage.openPage(TestData.URL);
         softAssert.assertEquals(driver.getTitle(), HOME_PAGE_TITLE);
     }
 
-    // Assert User is logged in
+    @Description(value = "Assert User is logged in.")
     @Test(priority = 4)
     public void userLoginTest() {
         mainJdiPage.login(USERNAME, PASSWORD);
         softAssert.assertEquals(mainJdiPage.getLoggedUserName(), LOGGED_USER_NAME);
     }
 
-    // Assert that there are 4 items on the header section are displayed and they have proper texts
+    @Description(value = "Assert that there are 4 items on the header "
+            + "section are displayed and they have proper texts.")
     @Test(priority = 5)
     public void headerItemNamesTest() {
         List<WebElement> headerItems = mainJdiPage.getHeaderItems();
@@ -50,7 +53,8 @@ public class ExerciseOneTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    // Assert that there are 4 images on the Index Page and they are displayed
+    @Description(value = "Assert that there are 4 images "
+            + "on the Index Page and they are displayed.")
     @Test(priority = 6)
     public void indexPageImagesTest() {
         List<WebElement> imagesItems = mainJdiPage.getImageItems();
@@ -61,7 +65,8 @@ public class ExerciseOneTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    // Assert that there are 4 texts on the Index Page under icons and they have proper text
+    @Description(value = "Assert that there are 4 texts "
+            + "on the Index Page under icons and they have proper text.")
     @Test(priority = 7)
     public void indexPageTextTest() {
         List<WebElement> textItems = mainJdiPage.getTextItems();
@@ -75,7 +80,8 @@ public class ExerciseOneTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    // Assert that there is the iframe with “Frame Button” exist and “Frame Button” in the iframe
+    @Description(value = "Assert that there is the iframe "
+            + "with “Frame Button” exist and “Frame Button” in the iframe.")
     @Test(priority = 8)
     public void frameButtonTest() {
         softAssert.assertTrue(mainJdiPage.getFrameElement().isDisplayed());
@@ -84,7 +90,8 @@ public class ExerciseOneTest extends BaseTest {
         mainJdiPage.switchToDefaultContent();
     }
 
-    // Assert that there are 5 items in the Left Section are displayed and they have proper text
+    @Description(value = "Assert that there are 5 items in the "
+            + "Left Section are displayed and they have proper text.")
     @Test(priority = 11)
     public void leftSectionTest() {
         List<WebElement> leftSectionElements = mainJdiPage.getLeftSectionElements();
