@@ -1,6 +1,7 @@
 package ru.training.at.hw4.tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import static ru.training.at.hw4.testdata.TestData.*;
 
+@Feature(value = "Main Jdi page.")
 public class ExerciseOneTest extends BaseTest {
 
     SoftAssert softAssert;

@@ -1,6 +1,7 @@
 package ru.training.at.hw4.tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static ru.training.at.hw4.testdata.TestData.*;
 
+@Feature(value = "Different Elements page.")
 public class ExerciseTwoTest extends BaseTest {
 
     ServiceDifferentElementsPage servDiffPage;
