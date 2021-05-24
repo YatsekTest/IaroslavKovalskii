@@ -2,6 +2,7 @@
 /shelf/
 /workspace.xml
 .idea/
+.allure
 
 # Package Files
 *.jar
@@ -21,4 +22,5 @@ etc.
 out/
 .idea/*.iml
 *.ipr
+allure-results
 

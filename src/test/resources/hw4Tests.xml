@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="HomeWork4Tests">
+    <test name="HomeWork4Tests">
+        <classes>
+            <class name="ru.training.at.hw4.tests.ExerciseOneTest"/>
+            <class name="ru.training.at.hw4.tests.ExerciseTwoTest"/>
+            <class name="ru.training.at.hw4.tests.FailedTest"/>
+        </classes>
+    </test>
+</suite>
+
