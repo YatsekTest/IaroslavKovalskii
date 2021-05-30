@@ -78,7 +78,7 @@ public class UserTablePageSteps {
     }
 
     @And("droplist should contain values in column Type for user Roman")
-    public void dpropListForRomanContainsValues(List<String> list) {
+    public void dropListForRomanContainsValues(List<String> list) {
         List<String> expectedList = list.stream().skip(1).collect(Collectors.toList());
         for (int i = 0; i < expectedList.size(); i++) {
             Assert.assertEquals(new UserTablePage(TestContext.getInstance()
@@ -86,4 +86,19 @@ public class UserTablePageSteps {
                     .getDropdownOptionText(i), expectedList.get(i));
         }
     }
+
+    @When("I select 'vip' checkbox for 'Sergey Ivan'")
+    public void selectCheckboxForSergeyIvan() {
+        new UserTablePage(TestContext.getInstance().getTestObject(TestContext.WEB_DRIVER))
+                .getVipCheckboxSergeyIvan().click();
+    }
+
+    @Then("1 log row has {string} text in log section")
+    public void logRowContainsValue(String value) {
+        String actualText = new UserTablePage(TestContext.getInstance()
+                .getTestObject(TestContext.WEB_DRIVER))
+                .getLogRow().getText();
+        Assert.assertTrue(actualText.contains(value));
+    }
+
 }

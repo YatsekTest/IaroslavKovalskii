@@ -34,6 +34,12 @@ public class UserTablePage extends BasePage {
     @FindBy(css = "select > option")
     private List<WebElement> dropdownOptions;
 
+    @FindBy(id = "ivan")
+    private WebElement vipCheckboxSergeyIvan;
+
+    @FindBy(css = "ul.panel-body-list.logs")
+    private WebElement logRow;
+
     public UserTablePage(WebDriver driver) {
         super(driver);
     }

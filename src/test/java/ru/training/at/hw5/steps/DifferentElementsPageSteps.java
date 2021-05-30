@@ -46,4 +46,5 @@ public class DifferentElementsPageSteps {
             Assert.assertTrue(logRows.get(i).getText().contains(LOG_TEXTS[i]));
         }
     }
+
 }
