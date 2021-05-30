@@ -9,7 +9,7 @@ import static ru.training.at.hw5.testdata.TestData.*;
 
 public class CommonSteps {
 
-    @Given("I open main Jdi page")
+    @Given("I open JDI GitHub site")
     public void openJdiPage() {
         new MainJdiPage(TestContext.getInstance().getTestObject(TestContext.WEB_DRIVER))
                 .openPage(URL);

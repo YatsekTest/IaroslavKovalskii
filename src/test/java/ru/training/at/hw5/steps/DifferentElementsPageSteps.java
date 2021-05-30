@@ -38,7 +38,7 @@ public class DifferentElementsPageSteps {
                 .getTestObject(TestContext.WEB_DRIVER)).selectDropdown();
     }
 
-    @Then("Logs are displayed and are corresponding to selected items")
+    @Then("Logs corresponding to the selected items are displayed")
     public void assertLogs() {
         List<WebElement> logRows = new ServiceDifferentElementsPage(TestContext.getInstance()
                 .getTestObject(TestContext.WEB_DRIVER)).getLogRows();
